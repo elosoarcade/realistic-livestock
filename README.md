@@ -1,5 +1,5 @@
-# Realistic livestock
-Realistic Livestock is a Minecraft Bedrock add-on that introduces more realistic mechanics for farm animals, including distinctions between males and females and significantly slower growth for baby animals. 🐄
+# Realistic lifestock
+Realistic Lifestock is a Minecraft Bedrock add-on that introduces more realistic mechanics for farm animals, including distinctions between males and females and significantly slower growth for baby animals. 🐄
 
 This add-on introduces males for cows, sheep, rabbits, pigs, and chickens — all of which are required for breeding. These males will spawn in their corresponding biomes but will be much scarcer than females. 
 
