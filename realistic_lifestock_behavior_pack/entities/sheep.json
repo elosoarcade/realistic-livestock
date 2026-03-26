@@ -1,5 +1,5 @@
 {
-  "format_version": "1.26.20",
+  "format_version": "1.26.10",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:sheep",
@@ -49,8 +49,8 @@
               "growth": 0.01
             }
           ],
-          "pause_growth_items": ["golden_dandelion"],
-          "reset_growth_items": ["golden_dandelion"],
+          "pause_growth_items": [ "golden_dandelion" ],
+          "reset_growth_items": [ "golden_dandelion" ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -59,13 +59,6 @@
         "minecraft:behavior.follow_parent": {
           "priority": 6,
           "speed_multiplier": 1.1
-        },
-        "minecraft:rideable": {
-          "seat_count": 1,
-          "family_types": ["baby_undead"],
-          "seats": {
-            "position": [0.0, 0.70, -0.3]
-          }
         }
       },
 
@@ -79,10 +72,26 @@
           "priority": 3,
           "speed_multiplier": 1.0
         },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 150,
+              "max_wait_time": 300,
+              "spawn_sound": "plop",
+              "spawn_item": "eoa:manure",
+              "filters": {
+                "test": "rider_count",
+                "subject": "self",
+                "operator": "==",
+                "value": 0
+              }
+            }
+          ]
+        },        
         "minecraft:breedable": {
           "require_tame": false,
           "breeds_with": {
-            "eoa:ram": {}
+            "minecraft:sheep": {}
           },
           "breed_items": ["wheat"]
         }
@@ -112,7 +121,7 @@
     "components": {
       "minecraft:offspring": {
         "offspring_pairs": {
-          "eoa:ram": "minecraft:sheep"
+          "minecraft:sheep": "minecraft:sheep"
         },
         "combine_parent_colors": true
       },
@@ -215,7 +224,7 @@
       },
       "minecraft:behavior.eat_block": {
         "priority": 6,
-        "success_chance": "query.is_baby ? 0.02 : 0.001",
+        "success_chance": "query.is_baby ? 0.02 : 0.00033",
         "time_until_eat": 1.8,
         "eat_and_replace_block_pairs": [
           { "eat_block": "grass", "replace_block": "dirt" },
@@ -284,7 +293,8 @@
         "add": {
           "component_groups": [
             "minecraft:sheep_baby",
-            "minecraft:sheep_dyeable"
+            "minecraft:sheep_dyeable",
+            "minecraft:rideable_sheared"
           ]
         }
       },
@@ -293,7 +303,8 @@
         "add": {
           "component_groups": [
             "minecraft:sheep_baby",
-            "minecraft:sheep_dyeable"
+            "minecraft:sheep_dyeable",
+            "minecraft:rideable_sheared"
           ]
         }
       },

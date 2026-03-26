@@ -15,7 +15,7 @@
         },
         "minecraft:sound_variant": {
           "type": "enum",
-          "values": ["default", "big", "mini"],
+          "values": [ "default", "big", "mini" ],
           "default": "default",
           "client_sync": true
         }
@@ -35,8 +35,8 @@
             { "item": "beetroot", "growth": 0.01 },
             { "item": "potato", "growth": 0.01 }
           ],
-          "pause_growth_items": ["golden_dandelion"],
-          "reset_growth_items": ["golden_dandelion"],
+          "pause_growth_items": [ "golden_dandelion" ],
+          "reset_growth_items": [ "golden_dandelion" ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -47,7 +47,6 @@
           "speed_multiplier": 1.1
         }
       },
-
       "minecraft:pig_transform": {
         "minecraft:transformation": {
           "into": "minecraft:pig_zombie",
@@ -55,7 +54,6 @@
           "delay": 0.5
         }
       },
-
       "minecraft:pig_adult": {
         "minecraft:experience_reward": {
           "on_bred": "Math.Random(1,7)",
@@ -64,6 +62,22 @@
         "minecraft:loot": {
           "table": "loot_tables/entities/pig.json"
         },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 150,
+              "max_wait_time": 300,
+              "spawn_sound": "plop",
+              "spawn_item": "eoa:manure",
+              "filters": {
+                "test": "rider_count",
+                "subject": "self",
+                "operator": "==",
+                "value": 0
+              }
+            }
+          ]
+        },        
         "minecraft:leashable_to": {},
         "minecraft:behavior.breed": {
           "priority": 4,
@@ -72,12 +86,11 @@
         "minecraft:breedable": {
           "require_tame": false,
           "breeds_with": {
-            "eoa:hog": {}
+            "minecraft:pig": {}
           },
           "breed_items": ["carrot", "beetroot", "potato"]
         }
       },
-
       "minecraft:pig_unsaddled": {
         "minecraft:interact": {
           "interactions": [
@@ -106,7 +119,6 @@
           }
         }
       },
-
       "minecraft:pig_saddled": {
         "minecraft:is_saddled": {},
         "minecraft:loot": {
@@ -162,14 +174,6 @@
     },
 
     "components": {
-      "minecraft:offspring": {
-        "offspring_pairs": {
-          "eoa:hog": "minecraft:pig"
-        },
-        "property_inheritance": {
-          "minecraft:climate_variant": {}
-        }
-      },
       "minecraft:is_hidden_when_invisible": {},
       "minecraft:damage_sensor": {
         "triggers": {
@@ -191,6 +195,14 @@
         "suffocate_time": 0
       },
       "minecraft:nameable": {},
+      "minecraft:offspring": {
+        "offspring_pairs": {
+          "minecraft:pig": "minecraft:pig"
+        },
+        "property_inheritance": {
+          "minecraft:climate_variant": {}
+        }
+      },
       "minecraft:spawn_egg_interaction": {},
       "minecraft:health": {
         "value": 10,
@@ -227,11 +239,6 @@
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:physics": {},
-      "minecraft:pushable_by_entity": {},
-      "minecraft:pushable_by_block": {},
-      "minecraft:conditional_bandwidth_optimization": {},
-
       "minecraft:behavior.mount_pathing": {
         "priority": 1,
         "speed_multiplier": 1.25,
@@ -248,7 +255,7 @@
       "minecraft:behavior.tempt": {
         "priority": 5,
         "speed_multiplier": 1.2,
-        "items": ["potato", "carrot", "beetroot"]
+        "items": ["potato", "carrot", "beetroot", "carrotOnAStick"]
       },
       "minecraft:behavior.random_stroll": {
         "priority": 7,
@@ -261,7 +268,11 @@
       },
       "minecraft:behavior.random_look_around": {
         "priority": 9
-      }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable_by_entity": {},
+      "minecraft:pushable_by_block": {},
+      "minecraft:conditional_bandwidth_optimization": {}
     },
 
     "events": {

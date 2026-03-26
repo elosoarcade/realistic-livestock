@@ -15,7 +15,7 @@
         },
         "minecraft:sound_variant": {
           "type": "enum",
-          "values": ["default", "picky"],
+          "values": [ "default", "picky" ],
           "default": "default",
           "client_sync": true
         }
@@ -38,8 +38,8 @@
             { "item": "pitcher_pod", "growth": 0.01 },
             { "item": "torchflower_seeds", "growth": 0.01 }
           ],
-          "pause_growth_items": ["golden_dandelion"],
-          "reset_growth_items": ["golden_dandelion"],
+          "pause_growth_items": [ "golden_dandelion" ],
+          "reset_growth_items": [ "golden_dandelion" ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -63,7 +63,7 @@
         "minecraft:breedable": {
           "require_tame": false,
           "breeds_with": {
-            "eoa:rooster": {}
+            "minecraft:chicken": {}
           },
           "breed_items": [
             "wheat_seeds",
@@ -88,33 +88,63 @@
         "minecraft:spawn_entity": {
           "entities": [
             {
-              "min_wait_time": 300,
-              "max_wait_time": 600,
+              "min_wait_time": 24000,
+              "max_wait_time": 24000,
               "spawn_sound": "plop",
               "spawn_item": "egg",
               "filters": [
-                { "test": "rider_count", "subject": "self", "operator": "==", "value": 0 },
-                { "test": "enum_property", "subject": "self", "domain": "minecraft:climate_variant", "value": "temperate" }
+                {
+                  "test": "rider_count",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": 0
+                },
+                {
+                  "test": "enum_property",
+                  "subject": "self",
+                  "domain": "minecraft:climate_variant",
+                  "value": "temperate"
+                }
               ]
             },
             {
-              "min_wait_time": 300,
-              "max_wait_time": 600,
+              "min_wait_time": 24000,
+              "max_wait_time": 24000,
               "spawn_sound": "plop",
               "spawn_item": "brown_egg",
               "filters": [
-                { "test": "rider_count", "subject": "self", "operator": "==", "value": 0 },
-                { "test": "enum_property", "subject": "self", "domain": "minecraft:climate_variant", "value": "warm" }
+                {
+                  "test": "rider_count",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": 0
+                },
+                {
+                  "test": "enum_property",
+                  "subject": "self",
+                  "domain": "minecraft:climate_variant",
+                  "value": "warm"
+                }
               ]
             },
             {
-              "min_wait_time": 300,
-              "max_wait_time": 600,
+              "min_wait_time": 24000,
+              "max_wait_time": 24000,
               "spawn_sound": "plop",
               "spawn_item": "blue_egg",
               "filters": [
-                { "test": "rider_count", "subject": "self", "operator": "==", "value": 0 },
-                { "test": "enum_property", "subject": "self", "domain": "minecraft:climate_variant", "value": "cold" }
+                {
+                  "test": "rider_count",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": 0
+                },
+                {
+                  "test": "enum_property",
+                  "subject": "self",
+                  "domain": "minecraft:climate_variant",
+                  "value": "cold"
+                }
               ]
             }
           ]
@@ -125,7 +155,7 @@
     "components": {
       "minecraft:offspring": {
         "offspring_pairs": {
-          "eoa:rooster": "minecraft:chicken"
+          "minecraft:chicken": "minecraft:chicken"
         },
         "property_inheritance": {
           "minecraft:climate_variant": {}
@@ -233,9 +263,6 @@
     },
 
     "events": {
-      "from_egg": {
-        "add": { "component_groups": ["minecraft:chicken_baby"] }
-      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
@@ -276,6 +303,7 @@
           }
         ]
       },
+
       "minecraft:entity_born": {
         "remove": {},
         "add": {
@@ -283,6 +311,7 @@
         },
         "trigger": "minecraft:randomize_sound_variant"
       },
+
       "minecraft:ageable_grow_up": {
         "remove": {
           "component_groups": ["minecraft:chicken_baby"]
@@ -291,12 +320,14 @@
           "component_groups": ["minecraft:chicken_adult"]
         }
       },
+
       "minecraft:spawn_adult": {
         "add": {
           "component_groups": ["minecraft:chicken_adult"]
         },
         "trigger": "minecraft:randomize_sound_variant"
       },
+
       "minecraft:hatch_warm": {
         "set_property": {
           "minecraft:climate_variant": "warm"

@@ -1,0 +1,11 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "eoa:manure_to_charcoal"
+    },
+    "tags": ["furnace"],
+    "input": "eoa:manure",
+    "output": "minecraft:charcoal"
+  }
+}

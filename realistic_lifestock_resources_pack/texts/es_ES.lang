@@ -1,14 +1,1 @@
-item.spawn_egg.entity.eoa:bull.name=Huevo generador de toro
-entity.eoa:bull.name=Toro
-item.spawn_egg.entity.eoa:rooster.name=Huevo generador de gallo
-entity.eoa:rooster.name=Gallo
-item.spawn_egg.entity.pig.name=Huevo generador de cerda
-entity.pig.name=Cerda
-item.spawn_egg.entity.eoa:hog.name=Huevo generador de cerdo
-entity.eoa:hog.name=Cerdo
-item.spawn_egg.entity.eoa:ram.name=Huevo generador de borrego
-entity.eoa:ram.name=Borrego
-item.spawn_egg.entity.rabbit.name=Huevo generador de coneja
-entity.rabbit.name=Coneja
-item.spawn_egg.entity.eoa:buck.name=Huevo generador de conejo
-entity.eoa:buck.name=Conejo
+item.eoa:manure=Estiércol
