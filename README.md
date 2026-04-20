@@ -9,4 +9,4 @@ As of version 6.0.0, llamas can be steered by placing a carpet on them.
 
 This addon is optimized to run effectively on Realms and dedicated servers with minimal hardware resource consumption and its available in english and español. 🇬🇧 🇲🇽
 
-![Realist Lifestock Minecraft Bedrock Add-on](https://media.forgecdn.net/attachments/1599/321/135437-png.png)
+![Realist Lifestock Minecraft Bedrock Add-on](media.forgecdn.net/attachments/1641/50/137581-png.png)
