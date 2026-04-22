@@ -4,7 +4,7 @@
         "description": "Add realistic Lifestock to Minecraft by El Oso Arcade",
         "name": "Realistic Lifestock (B)",
         "uuid": "4b6af30d-64e9-444a-aca7-ab95a1d97b2c",
-        "version": [ 6, 0, 0 ],
+        "version": [ 6, 0, 1 ],
         "min_engine_version": [ 1, 21, 70 ]
     },
   	"metadata": {
@@ -18,13 +18,13 @@
             "description": "Add realistic Lifestock to Minecraft by El Oso Arcade",
             "type": "data",
             "uuid": "ad10c45b-6146-4ce6-9e8b-0b8361d0e123",
-            "version": [ 6, 0, 0 ]
+            "version": [ 6, 0, 1 ]
         }
     ],
     "dependencies": [
         {
             "uuid": "cb8103bf-0d78-4bcb-b0f8-01e81fa07fd0",
-            "version": [ 6, 0, 0 ]
+            "version": [ 6, 0, 1 ]
         }
     ]
 }
